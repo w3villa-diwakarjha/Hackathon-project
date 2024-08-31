@@ -149,8 +149,8 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route element={<ProtectedRoute />}>
+            <Route path='/' element={<ECommerce />} />
           </Route>
-          <Route path='/' element={<ECommerce />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path='*' element={<Error />} />
         </Routes>

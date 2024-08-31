@@ -4,6 +4,7 @@ import SidebarLinkGroup from './SidebarLinkGroup';
 // import Logo from '../../images/logo/logo.svg';
 import AILogo from '../../images/logo/AILogo.svg';
 import '../../css/index.css';
+// import { AuthContext } from '../../contexts/AuthContext';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -60,9 +61,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
-        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-3">
@@ -100,13 +100,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         {/* <!-- Sidebar Menu --> */}
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
-          {/* <div>
+          <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               MENU
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              <!-- Menu Item Dashboard -->
+              {/* <!-- Menu Item Dashboard --> */}
               <SidebarLinkGroup
                 activeCondition={
                   pathname === '/' || pathname.includes('dashboard')
@@ -173,7 +173,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           />
                         </svg>
                       </NavLink>
-                      <!-- Dropdown Menu Start -->
+                      {/* <!-- Dropdown Menu Start --> */}
                       <div
                         className={`translate transform overflow-hidden ${
                           !open && 'hidden'
@@ -193,14 +193,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                         </ul>
                       </div>
-                      <!-- Dropdown Menu End -->
+                      {/* <!-- Dropdown Menu End --> */}
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
-              <!-- Menu Item Dashboard -->
+              {/* <!-- Menu Item Dashboard --> */}
 
-              <!-- Menu Item Calendar -->
+              {/* <!-- Menu Item Calendar --> */}
               <li>
                 <NavLink
                   to="/calendar"
@@ -225,9 +225,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Calendar
                 </NavLink>
               </li>
-              <!-- Menu Item Calendar -->
+              {/* <!-- Menu Item Calendar --> */}
 
-              <!-- Menu Item Profile -->
+              {/* <!-- Menu Item Profile --> */}
               <li>
                 <NavLink
                   to="/profile"
@@ -255,9 +255,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Profile
                 </NavLink>
               </li>
-              <!-- Menu Item Profile -->
+              {/* <!-- Menu Item Profile --> */}
 
-              <!-- Menu Item Forms -->
+              {/* <!-- Menu Item Forms --> */}
               <SidebarLinkGroup
                 activeCondition={
                   pathname === '/forms' || pathname.includes('forms')
@@ -328,7 +328,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           />
                         </svg>
                       </NavLink>
-                      <!-- Dropdown Menu Start -->
+                      {/* <!-- Dropdown Menu Start --> */}
                       <div
                         className={`translate transform overflow-hidden ${
                           !open && 'hidden'
@@ -359,14 +359,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                         </ul>
                       </div>
-                      <!-- Dropdown Menu End -->
+                      {/* <!-- Dropdown Menu End --> */}
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
-              <!-- Menu Item Forms -->
+              {/* <!-- Menu Item Forms --> */}
 
-              <!-- Menu Item Tables -->
+              {/* <!-- Menu Item Tables --> */}
               <li>
                 <NavLink
                   to="/tables"
@@ -402,9 +402,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Tables
                 </NavLink>
               </li>
-              <!-- Menu Item Tables -->
+              {/* <!-- Menu Item Tables --> */}
 
-              <!-- Menu Item Settings -->
+              {/* <!-- Menu Item Settings --> */}
               <li>
                 <NavLink
                   to="/settings"
@@ -445,15 +445,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Settings
                 </NavLink>
               </li>
-              <!-- Menu Item Settings -->
+              {/* <!-- Menu Item Settings --> */}
             </ul>
-          </div> */}
+          </div>
 
           {/* <!-- Others Group --> */}
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+            {/* <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               OTHERS
-            </h3>
+            </h3> */}
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Chart --> */}
@@ -617,12 +617,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <NavLink
+                      {/* <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/auth' || pathname.includes('auth')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/auth' || pathname.includes('auth')) &&
                           'bg-graydark dark:bg-meta-4'
-                        }`}
+                          }`}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
@@ -661,9 +660,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                         Authentication
                         <svg
-                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
-                            open && 'rotate-180'
-                          }`}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'
+                            }`}
                           width="20"
                           height="20"
                           viewBox="0 0 20 20"
@@ -678,25 +676,26 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           />
                         </svg>
                       </NavLink>
-                      {/* <!-- Dropdown Menu Start --> */}
+                      <!-- Dropdown Menu Start -->
                       <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
+                        className={`translate transform overflow-hidden ${!open && 'hidden'
+                          }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
-                          <li>
-                            <NavLink
-                              to="/signin"
-                              className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
-                              }
-                            >
-                              Sign In
-                            </NavLink>
-                          </li>
-                          {/* <li>
+                      </div> */}
+                      {/* <!-- Dropdown Menu End --> */}
+                      <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        {/* <li>
+                          <NavLink
+                            to="/signin"
+                            className={({ isActive }) =>
+                              'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
+                              (isActive && '!text-white')
+                            }
+                          >
+                            Sign In
+                          </NavLink>
+                        </li> */}
+                        {/* <li>
                             <NavLink
                               to="/auth/signup"
                               className={({ isActive }) =>
@@ -707,9 +706,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                               Sign Up
                             </NavLink>
                           </li> */}
-                        </ul>
-                      </div>
-                      {/* <!-- Dropdown Menu End --> */}
+                      </ul>
                     </React.Fragment>
                   );
                 }}
