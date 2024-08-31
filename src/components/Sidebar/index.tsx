@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
-import Logo from '../../images/logo/logo.svg';
+// import Logo from '../../images/logo/logo.svg';
+import AILogo from '../../images/logo/AILogo.svg';
 import '../../css/index.css';
 
 interface SidebarProps {
@@ -64,11 +65,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-3">
+      <div className="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-3">
         {/* <h1>AI Tutor</h1> */}
         <NavLink className='logo' to="/">
-          {/* <img src={Logo} alt="Logo" /> */}
-          AI TUTOR
+          <img src={AILogo} alt="Logo" className='image-logo' />
+          {/* AI TUTOR */}
         </NavLink>
 
         <button
@@ -99,13 +100,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         {/* <!-- Sidebar Menu --> */}
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
-          <div>
+          {/* <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               MENU
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              {/* <!-- Menu Item Dashboard --> */}
+              <!-- Menu Item Dashboard -->
               <SidebarLinkGroup
                 activeCondition={
                   pathname === '/' || pathname.includes('dashboard')
@@ -172,7 +173,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           />
                         </svg>
                       </NavLink>
-                      {/* <!-- Dropdown Menu Start --> */}
+                      <!-- Dropdown Menu Start -->
                       <div
                         className={`translate transform overflow-hidden ${
                           !open && 'hidden'
@@ -192,14 +193,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                         </ul>
                       </div>
-                      {/* <!-- Dropdown Menu End --> */}
+                      <!-- Dropdown Menu End -->
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
-              {/* <!-- Menu Item Dashboard --> */}
+              <!-- Menu Item Dashboard -->
 
-              {/* <!-- Menu Item Calendar --> */}
+              <!-- Menu Item Calendar -->
               <li>
                 <NavLink
                   to="/calendar"
@@ -224,9 +225,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Calendar
                 </NavLink>
               </li>
-              {/* <!-- Menu Item Calendar --> */}
+              <!-- Menu Item Calendar -->
 
-              {/* <!-- Menu Item Profile --> */}
+              <!-- Menu Item Profile -->
               <li>
                 <NavLink
                   to="/profile"
@@ -254,9 +255,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Profile
                 </NavLink>
               </li>
-              {/* <!-- Menu Item Profile --> */}
+              <!-- Menu Item Profile -->
 
-              {/* <!-- Menu Item Forms --> */}
+              <!-- Menu Item Forms -->
               <SidebarLinkGroup
                 activeCondition={
                   pathname === '/forms' || pathname.includes('forms')
@@ -327,7 +328,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           />
                         </svg>
                       </NavLink>
-                      {/* <!-- Dropdown Menu Start --> */}
+                      <!-- Dropdown Menu Start -->
                       <div
                         className={`translate transform overflow-hidden ${
                           !open && 'hidden'
@@ -358,14 +359,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                         </ul>
                       </div>
-                      {/* <!-- Dropdown Menu End --> */}
+                      <!-- Dropdown Menu End -->
                     </React.Fragment>
                   );
                 }}
               </SidebarLinkGroup>
-              {/* <!-- Menu Item Forms --> */}
+              <!-- Menu Item Forms -->
 
-              {/* <!-- Menu Item Tables --> */}
+              <!-- Menu Item Tables -->
               <li>
                 <NavLink
                   to="/tables"
@@ -401,9 +402,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Tables
                 </NavLink>
               </li>
-              {/* <!-- Menu Item Tables --> */}
+              <!-- Menu Item Tables -->
 
-              {/* <!-- Menu Item Settings --> */}
+              <!-- Menu Item Settings -->
               <li>
                 <NavLink
                   to="/settings"
@@ -444,9 +445,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Settings
                 </NavLink>
               </li>
-              {/* <!-- Menu Item Settings --> */}
+              <!-- Menu Item Settings -->
             </ul>
-          </div>
+          </div> */}
 
           {/* <!-- Others Group --> */}
           <div>
@@ -456,7 +457,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Chart --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/chart"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -495,10 +496,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Chart
                 </NavLink>
               </li>
-              {/* <!-- Menu Item Chart --> */}
+              <!-- Menu Item Chart -->
 
-              {/* <!-- Menu Item Ui Elements --> */}
-              <SidebarLinkGroup
+              <!-- Menu Item Ui Elements --> */}
+              {/* <SidebarLinkGroup
                 activeCondition={pathname === '/ui' || pathname.includes('ui')}
               >
                 {(handleClick, open) => {
@@ -570,7 +571,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                       </NavLink>
                       {/* <!-- Dropdown Menu Start --> */}
-                      <div
+                      {/* <div
                         className={`translate transform overflow-hidden ${
                           !open && 'hidden'
                         }`}
@@ -600,11 +601,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                         </ul>
                       </div>
-                      {/* <!-- Dropdown Menu End --> */}
+                      <!-- Dropdown Menu End -->
                     </React.Fragment>
                   );
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
               {/* <!-- Menu Item Ui Elements --> */}
 
               {/* <!-- Menu Item Auth Pages --> */}
@@ -695,7 +696,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                               Sign In
                             </NavLink>
                           </li>
-                          <li>
+                          {/* <li>
                             <NavLink
                               to="/auth/signup"
                               className={({ isActive }) =>
@@ -705,7 +706,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             >
                               Sign Up
                             </NavLink>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                       {/* <!-- Dropdown Menu End --> */}

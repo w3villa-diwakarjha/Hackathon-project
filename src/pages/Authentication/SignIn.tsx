@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
+import AILogo from '../../images/logo/AILogo.svg'
+import '../../css/signin.css';
 
 const SignIn: React.FC = () => {
   return (
@@ -13,10 +15,11 @@ const SignIn: React.FC = () => {
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
-            <Link className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2" to="/">
+            <Link className="flex justify-center mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2" to="/">
                 {/* <img className="hidden dark:block" src={Logo} alt="Logo" />
                 <img className="dark:hidden" src={LogoDark} alt="Logo" /> */}
-                AI Tutor
+                <img src={AILogo} alt="Logo" className='signin-logo'/>
+                {/* AI Tutor */}
               </Link>
 
               <p className="2xl:px-20">
@@ -268,14 +271,14 @@ const SignIn: React.FC = () => {
                   Sign in with Google
                 </button> */}
 
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                   <p>
                     Don’t have any account?{' '}
                     <Link to="/auth/signup" className="text-primary">
                       Sign Up
                     </Link>
                   </p>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

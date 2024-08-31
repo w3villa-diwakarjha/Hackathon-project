@@ -16,7 +16,7 @@ const SignUp: React.FC = () => {
               <Link className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2" to="/">
                 {/* <img className="hidden dark:block" src={Logo} alt="Logo" />
                 <img className="dark:hidden" src={LogoDark} alt="Logo" /> */}
-                AI Tutor
+                {/* AI Tutor */}
               </Link>
               <p className="2xl:px-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
